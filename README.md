@@ -50,7 +50,6 @@ You'll need the following things:
 You'll need to create a form that has the following text boxes. These are case sensitive so please make sure they match exactly. Or you can change the lines in the script to be your custom field.
 
 * ```SSH username```
-* ```Username```
 * ```SSH Public Key```
 
 On the document, make sure you check only the following two boxes. Note, in the picture you don't see some of the boxes because the form wasn't made with a business account:
@@ -60,6 +59,8 @@ On the document, make sure you check only the following two boxes. Note, in the 
 * Allow responders to edit responses after submitting
 
 Name your document and save the name, you'll use it later on when setting environment variables.
+
+Lastly, you'll want to edit the "answers" spreadsheet. Add a column that says "purge". If you put an ```x``` in this field, then the user will automatically be purged from the system even if they update their key.
 
 ### Create a Google API key
 While logged into your organizational email, you'll need to create an API key and then activate google drive API

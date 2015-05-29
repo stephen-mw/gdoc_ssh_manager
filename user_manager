@@ -187,7 +187,7 @@ if __name__ == '__main__':
 
         email = row['Username']
         public_key = row['SSH Public Key']
-        purge_flag = row['purge']
+        purge_flag = row.get('purge')
 
         # Make sure their username is valid. This comes back as None we'll
         # assume the username is invalid
