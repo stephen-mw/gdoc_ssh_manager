@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -e # exit on all errors
+
+# Install the requires packages
+apt-get install -y install libffi-dev libssl-dev python-dev python-pip
+
+# Install the required pip packages
+pip install gspread>=0.2.5 oauth2client>=1.4.11 pyOpenSSL>=0.15.1
+
+# Allow users of the sudo group to sudo without password
+sed -i 's/%sudo\tALL=(ALL:ALL) ALL/%sudo\tALL=NOPASSWD: ALL/g' /etc/sudoers
