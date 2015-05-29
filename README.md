@@ -11,6 +11,7 @@ A user logs into their work gmail account. Once logged in, they can see a Google
 ![](http://i.imgur.com/PCLv7Hg.png)
 
 After they submit their form, their information is automatically added to a spreadsheet
+
 ![](http://i.imgur.com/4xM9E4b.png)
 
 Now all we need is a backend service that scrapes and verifies this spreadsheet :-)
@@ -32,7 +33,9 @@ This project was the result of brainstorming ideas for solving the following pro
 
 Google Forms/Sheets is actually a good choice for this project. Everyone knows how it works. It has incredible uptime and uses secure endpoints. It also has a well-documented API and allows for a staggering 10 million requests a day _for free_. That means you can have almost 7000 hosts update every minute using a free api key!
 
-The Form allowed a simple way for everyone in the organization to update (read: self-service) their own API key. It forced authentication and was about as easy to use as it gets.
+It also has some additional features that are useful for this task: a user can only submit data once. And once submitted, they can edit it at their on leisure. They don't have access to the backend spreadsheet, just their "answer".
+
+The Form allowed a simple way for everyone in the organization to update (read: self-service) their own ssh-key key. It forced authentication and was about as easy to use as it gets.
 
 The backend to Google Forms is actually just a spreadsheet that's easy to read and parse. Write access to the spreadsheet can be "shared" with someone else at the company and they can manage it without needing any linux experience.
 
