@@ -3,13 +3,19 @@ This script manages ssh user and sudo access via... GOOGLE DOCS!
 
 The way this works is simple:
 
-1. A user logs into their work gmail account.
-2. Once logged in, they can see a Google Form, which allows them to input the following three things for themselves:
+A user logs into their work gmail account. Once logged in, they can see a Google Form, which allows them to input the following three things for themselves:
   * full name
   * ssh username
   * ssh public key
-3. A service runs in the backend of a linux host that scans the form. If it sees valid inputs for a user, it adds the system user.
-4. An administer can also edit the spreadsheet and toggle some additional "hidden flags" that do things like purge a user from the system.
+
+![](http://i.imgur.com/PCLv7Hg.png)
+
+After they submit their form, their information is automatically added to a spreadsheet
+![](http://i.imgur.com/4xM9E4b.png)
+
+Now all we need is a backend service that scrapes and verifies this spreadsheet :-)
+
+An administer can also edit the spreadsheet and toggle some additional "hidden flags" that do things like purge a user from the system.
 
 This is just a proof-of-concept and has security issues. Please don't use it for anything other than for fun.
 
@@ -44,7 +50,7 @@ You'll need to create a form that has the following text boxes. These are case s
 * ```Username```
 * ```SSH Public Key```
 
-On the document, make sure you check only the following two boxes:
+On the document, make sure you check only the following two boxes. Note, in the picture you don't see some of the boxes because the form wasn't made with a business account:
 * Require <ORGANIZATION> login to view this form
 * Automatically collect respondent's <ORGANIZATION username
 * Only allow one response per person (requires login)
@@ -72,6 +78,8 @@ This step is important or else you won't be able to see any documents when you m
 Find the Google spreadsheet that's created automatically by your Form. The title of this document is what you'll set the environment variable ```DOCUMENT_TITLE``` to on your system.
 
 While you have the document open, share it with the email address that's provided in your credentials file. Again, this step is important! Or else you'll look for documents with the API and won't find any!
+
+You'll see that your backend form is a really simple excel spreadsheet:
 
 ### Install the packages
 If you're running ubuntu you can simply execute the install script:
