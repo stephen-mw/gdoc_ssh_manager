@@ -26,7 +26,7 @@ For production you should use ldap + kerberos. That's the industry standard for 
 This project was the result of brainstorming ideas for solving the following problems:
 
 1. Allow an authenticated user to self-manage their ssh-keys
-2. Allow an engineer with NO shell/linux experience to administer those users
+2. Allow someone with NO shell/linux experience to administer the users in the spreadsheet.
 3. Easily control access to those engineers
 4. Be near real-time (less than 5 minutes from update to rollout)
 5. Zero time from engineers spent rolling out keys
